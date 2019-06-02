@@ -11,7 +11,7 @@ export abstract class Option<T> {
      * other values are wrapped as Some
      * @param v 
      */
-    public static toOption<T>(v: any): Option<T> {
+    public static of<T>(v: any): Option<T> {
         return !Option.hasValue(v) ?
             None :  
             new Some<T>(v);
@@ -70,12 +70,12 @@ export abstract class Option<T> {
         if(this.isSome()) {
             let s = this as unknown as Some<T>;
             if(Option.hasValue(someValue)) {
-                return Option.toOption(someValue(s.value));
+                return Option.of(someValue(s.value));
             }
         }
         else {
             if(Option.hasValue(noneValue)) {
-                return Option.toOption(noneValue());
+                return Option.of(noneValue());
             }
         }
 
@@ -95,7 +95,7 @@ export abstract class Option<T> {
         }
 
         let s = this as unknown as Some<T>;
-        return Option.toOption(transformFunc(s.value));
+        return Option.of(transformFunc(s.value));
     }
 }
 

@@ -2,44 +2,44 @@ import { Option, None, Some } from "../Option";
 
 describe('Option Tests', () => {
 
-    it('toOption with undefined, expect None', () => {
+    it('of with undefined, expect None', () => {
 
-        let o = Option.toOption(undefined);
-
-        expect(o).toBe(None);
-    });
-
-    it('toOption with null, expect None', () => {
-
-        let o = Option.toOption(null);
+        let o = Option.of(undefined);
 
         expect(o).toBe(None);
     });
 
-    it('toOption with value, expect Some', () => {
+    it('of with null, expect None', () => {
 
-        let o = Option.toOption("Hello World");
+        let o = Option.of(null);
+
+        expect(o).toBe(None);
+    });
+
+    it('of with value, expect Some', () => {
+
+        let o = Option.of("Hello World");
 
         expect(o).toBeInstanceOf(Some);
     });
 
-    it('toOption with value, expect correct value from Some', () => {
+    it('of with value, expect correct value from Some', () => {
 
-        let o = Option.toOption("Hello World");
+        let o = Option.of("Hello World");
 
         expect(o.value).toBe("Hello World");
     });
 
     it('isSome when it is None', () => {
 
-        let o = Option.toOption(undefined);
+        let o = Option.of(undefined);
 
         expect(o.isSome()).toBeFalsy();
     });
 
     it('isSome when it is Some', () => {
 
-        let o = Option.toOption("Hello World");
+        let o = Option.of("Hello World");
 
         expect(o.isSome()).toBeTruthy();
     });
@@ -51,12 +51,12 @@ describe('Option Tests', () => {
 
     it('defaultValue with Some, expect value', () => {
 
-        expect(Option.toOption("Scooby").defaultValue("Doo")).toBe("Scooby");
+        expect(Option.of("Scooby").defaultValue("Doo")).toBe("Scooby");
     });
 
     it('match with Some, expect some action to be called', () => {
 
-        let option = Option.toOption("Scooby");
+        let option = Option.of("Scooby");
 
         let someFn = jest.fn();
         let noneFn = jest.fn();
@@ -70,7 +70,7 @@ describe('Option Tests', () => {
 
     it('match with None, expect none action to be called', () => {
 
-        let option = Option.toOption(undefined);
+        let option = Option.of(undefined);
 
         let someFn = jest.fn();
         let noneFn = jest.fn();
@@ -84,7 +84,7 @@ describe('Option Tests', () => {
 
     it('match with Some, expect wrapped value returned', () => {
 
-        let option = Option.toOption("Scooby");
+        let option = Option.of("Scooby");
 
         let someFn = (_: string) => "Doo";
         let noneFn = jest.fn();
@@ -96,7 +96,7 @@ describe('Option Tests', () => {
 
     it('match with None, expect wrapped value returned', () => {
 
-        let option = Option.toOption(null);
+        let option = Option.of(null);
 
         let someFn = jest.fn();
         let noneFn = () => "Doo";
@@ -115,7 +115,7 @@ describe('Option Tests', () => {
     it('map with Some, expect Some', () => {
 
         let transformFn = (_: string) => 123;
-        let result = Option.toOption("Scooby").map(transformFn);
+        let result = Option.of("Scooby").map(transformFn);
 
         expect(result.value).toBe(123);
     });
@@ -131,6 +131,6 @@ describe('Option Tests', () => {
 
     it('calling value on Some will unwrap value', () => {
 
-        expect(Option.toOption("Hello").value).toBe("Hello");
+        expect(Option.of("Hello").value).toBe("Hello");
     });
 });

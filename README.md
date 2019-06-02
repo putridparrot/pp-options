@@ -19,15 +19,15 @@ _Note: The design of Option began as a port of Optional in Java, then went throu
 
 # Option methods
 
-## toOption
+## of
 
-The _toOption_ static method allows us to wrap a value witnin a Some or return a None (if undefined or null).
+The _of_ static method allows us to wrap a value witnin a Some or return a None (if undefined or null).
 
 For example
 
 ```javascript
 
-let option = Option.toOption(someValue);
+let option = Option.of(someValue);
 ```
 
 ## isSome
@@ -37,7 +37,7 @@ As we will normally pass around Option objects, we may need to test of the Optio
 For example
 
 ```javascript
-let option = Option.toOption(someValue);
+let option = Option.of(someValue);
 
 if(option.isSome()) {
     // do something
@@ -51,7 +51,7 @@ As per the _isSome_ method we can test whether an Option is, in this case, None 
 For example
 
 ```javascript
-let option = Option.toOption(someValue);
+let option = Option.of(someValue);
 
 if(option.isNone()) {
     // do something
@@ -63,7 +63,7 @@ if(option.isNone()) {
 Gets the value if the option is Some, otherwise returns the supplied default value. The resultant value is unwrapped
 
 ```javascript
-let option = Option.toOption(someValue);
+let option = Option.of(someValue);
 
 let value = option.defaultValue(123);
 ```
@@ -79,7 +79,7 @@ The unwrapped value returned from the functions is then wrapped in an Option.
 
 ```javascript
 
-let option = Option.toOption(someValue);
+let option = Option.of(someValue);
 
 let someFunction = (_: string) => "SomeValue";
 let noneFunction = () => "NoneValue";
@@ -93,7 +93,7 @@ The _map_ method takes a transformation function which, if the Option is Some wi
 
 ```javascript
 
-let option = Option.toOption(someValue);
+let option = Option.of(someValue);
 
 let transformationFunction = (_: string) => 123;
 
@@ -105,7 +105,7 @@ let result = option.map(transformationFunction);
 The _Value_ property allows us to unwrap the value stored within a Some object. However originally this was coded to only exist on a Some object, leading to code such as the following being written
 
 ```javascript
-let option = Option.toOption("Hello);
+let option = Option.of("Hello);
 
 let value = (option as Some<string>).value;
 ```
@@ -113,7 +113,7 @@ let value = (option as Some<string>).value;
 Instead we now have the _value_ on both None and Some so we can use value like this
 
 ```javascript
-let option = Option.toOption("Hello);
+let option = Option.of("Hello);
 
 let value = option.value;
 ```
