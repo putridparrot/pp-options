@@ -1,7 +1,7 @@
 # pp-options
 TypeScript/JavaScript functional style Option type(s). 
 
-Instead of worrying about possible usage of _undefined_ or _null_ values. The Option type acts as a replacement for invalid (undefined or null) values. The sublass None represents undefined/null values whilst the Some class acts as a wrapper around valid values. 
+Instead of worrying about possible usage of _undefined_ or _null_ values. The Option type acts as a replacement for invalid (undefined or null) values. The subclass None represents undefined/null values whilst the Some class acts as a wrapper around valid values. 
 
 This alone only saves us from writing code such as
 
@@ -21,7 +21,7 @@ _Note: The design of Option began as a port of Optional in Java, then went throu
 
 ## of
 
-The _of_ static method allows us to wrap a value witnin a Some or return a None (if undefined or null).
+The _of_ static method allows us to wrap a value within a Some or return a None (if undefined or null).
 
 For example
 
