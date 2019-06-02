@@ -1,0 +1,26 @@
+{
+  "name": "funk-options",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/putridparrot/funk-options.git",
+  "author": "Mark Timmings <mark.timmings@putridparrot.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint ./src/*.ts"
+  },
+  "directories": {
+    "test": "__tests__"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.2",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "3.4.5",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0"
+  }
+}
