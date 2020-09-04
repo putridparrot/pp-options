@@ -3,16 +3,6 @@ TypeScript/JavaScript functional style Option type(s).
 
 Instead of worrying about possible usage of _undefined_ or _null_ values. The Option type acts as a replacement for invalid (undefined or null) values. The subclass None represents undefined/null values whilst the Some class acts as a wrapper around valid values. 
 
-This alone only saves us from writing code such as
-
-```javascript
-if(value !== undefined && value !== null) {
-    // do something
-}
-```
-
-but the Option base class also declares methods which allow us to interact with Option objects in a functional manner.
-
 Whilst the Option gives us a warm fuzzy feeling around our undefined or null values we still need to _unwrap_ our values from the Option at times, hence methods such as _defaultValue_ amongst others will handle the test as to whether the Option is a Some or None and return values or pass values to functions by handling this test for us.
 
 _Note: The design of Option began as a port of Optional in Java, then went through C# idioms before arriving in TypeScript and being rewritten to be more inline with the F# implementation of Option._
