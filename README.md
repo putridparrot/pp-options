@@ -1,4 +1,7 @@
 # pp-options
+
+![Build](https://github.com/putridparrot/pp-options/workflows/Build/badge.svg)
+
 TypeScript/JavaScript functional style Option type(s). 
 
 Instead of worrying about possible usage of _undefined_ or _null_ values. The Option type acts as a replacement for invalid (undefined or null) values. The subclass None represents undefined/null values whilst the Some class acts as a wrapper around valid values. 
