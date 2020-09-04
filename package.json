@@ -2,7 +2,7 @@
   "name": "@pp/options",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/putridparrot/funk-options.git",
+  "repository": "https://github.com/putridparrot/pp-options.git",
   "author": "Mark Timmings <mark.timmings@putridparrot.com>",
   "license": "MIT",
   "dependencies": {},
